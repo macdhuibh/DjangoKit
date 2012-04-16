@@ -1,4 +1,5 @@
 pyobjc
 py2app
 django
+pysqlite
 -e git://github.com/macdhuibh/DjangoKit.git#egg=DjangoKit
