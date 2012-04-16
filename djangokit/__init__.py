@@ -35,8 +35,7 @@ def setup(**args):
     os.environ['DJANGO_SETTINGS_MODULE'] = 'djangokit.settings'
     from django.core.management import call_command
     from django.conf import settings
-    settings.DATABASE_NAME  # reading a property inflated the settings object
-    settings.DATABASE_NAME = "database.sqlite"
+    settings.DATABASES['default']['NAME'] = "database.sqlite"
     call_command('syncdb')
 
     plist = dict(

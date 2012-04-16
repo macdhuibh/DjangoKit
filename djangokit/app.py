@@ -23,7 +23,7 @@ import djangokit.settings
 
 from django.conf import settings
 import django
-settings.DATABASE_ENGINE # accessng a property inflates the settings
+settings.DATABASES # accessng a property inflates the settings
 
 # now we change the settings object for the current project.
 
@@ -42,8 +42,8 @@ if not os.path.isdir(support_folder):
 
 # TODO - need some way of updating SQL schema
 # of course, this is a general django problem.
-settings.DATABASE_NAME = os.path.join( support_folder, "database.sqlite" )
-if not os.path.isfile( settings.DATABASE_NAME ):
+settings.DATABASES['default']['NAME'] = os.path.join( support_folder, "database.sqlite" )
+if not os.path.isfile(settings.DATABASES['default']['NAME']):
     NSLog("installing default database")
     shutil.copy(
         os.path.join( NSBundle.mainBundle().resourcePath(), "database.sqlite" ),
