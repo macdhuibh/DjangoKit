@@ -8,8 +8,7 @@ This is a friendly fork of Tom Insam's DjangoKit.
 
 I forked it here in an attempt to get it up and running on my Lion box with Python2.7 and Django 1.3+.
 
-DjangoKit is a framework that will take a Django application, and turn it into a stand-alone MacOS application with a local database and media files. It started as more of a thought experiment than an effort at producing a real application, but I have it working, and you can package perfectly usable stand-alone applications with it.
-
+DjangoKit is a framework that will take a Django application, and turn it into a stand-alone MacOS application with a local database and media files.
 
 ##Develpoment Environment Setup
 
