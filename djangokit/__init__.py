@@ -1,5 +1,7 @@
 from distutils.core import setup as setup_core
-import py2app, sys, os
+import os
+import sys
+import py2app
 from glob import glob
 import django
 from AppKit import NSBundle
@@ -45,6 +47,8 @@ def setup(**args):
         CFBundleShortVersionString=args['version'],
         CFBundleVersion=args['version'],
         NSHumanReadableCopyright="Copyright 2007 %s" % args['author'],
+        LSPrefersPPC=False,
+        LSArchitecturePriority='x86_64',
         DjangoKit={
           'appname': appname,
           'prettyname': prettyname,
@@ -53,6 +57,10 @@ def setup(**args):
     )
 
     py2app_options = dict(
+        argv_emulation=True,
+        semi_standalone=False,
+        optimize=2,
+        site_packages=True,
         plist=plist,
         packages=[appname, 'djangokit', 'django'],
     )
