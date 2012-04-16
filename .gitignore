@@ -1,0 +1,49 @@
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.pyc
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log/*.log
+*.sql
+*.sqlite
+*.db
+
+# OS generated files #
+######################
+.DS_Store
+thumbs.db
+Icon?
+Thumbs.db
+
+# Django Related #
+##################
+site-packages
+databases
+
+# Pip / Build Related #
+#######################
+src
+build
+
+# Text Editor Related #
+########################
+.codeintel
+*.esproj
