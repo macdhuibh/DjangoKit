@@ -21,3 +21,9 @@ The rest of PyObjC can be installed with pip. So we can install PyObC and the re
 Again, if you aren't using virtualenv, you'll need to use sudo.
 
 		pip install -r requirements.txt
+
+##Software version used
+	python2.7
+	PyObjC 2.3
+	py2app 0.6.4
+	MacOS X 10.6 Lion
