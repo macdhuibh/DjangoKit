@@ -1,7 +1,7 @@
 include setup.py
 include MANIFEST.in
 include CHANGELOG
-include README
+include README.md
 recursive-include examples *.py *.html README
 recursive-include djangokit *.py *.nib
 
