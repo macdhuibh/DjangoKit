@@ -1,5 +1,16 @@
 #DjangoKit
 
+This is a friendly fork of Tom Insam's DjangoKit.
+
+		https://code.google.com/p/djangokit/
+		http://movieos.org/code/djangokit/
+		http://movieos.org/blog/2007/djangokit-gets-better/
+
+I forked it here in an attempt to get it up and running on my Lion box with Python2.7 and Django 1.3+.
+
+DjangoKit is a framework that will take a Django application, and turn it into a stand-alone MacOS application with a local database and media files. It started as more of a thought experiment than an effort at producing a real application, but I have it working, and you can package perfectly usable stand-alone applications with it.
+
+
 ##Develpoment Environment Setup
 
 First clone the repo and enter the DjangoKit directory.
@@ -26,4 +37,5 @@ Again, if you aren't using virtualenv, you'll need to use sudo.
 	python2.7
 	PyObjC 2.3
 	py2app 0.6.4
+	django 1.3+
 	MacOS X 10.6 Lion
