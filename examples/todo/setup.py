@@ -2,8 +2,8 @@
 from djangokit import setup
 
 setup(
-  appname = "DjangoKit TODO demo",
-  apps = [ "todo" ],
+  appname = "todo",
+  prettyname = "DjangoKit TODO demo",
   version = "0.1",
   author = "Tom Insam",
   author_email = "tom@jerakeen.org",

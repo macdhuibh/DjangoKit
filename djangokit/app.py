@@ -6,10 +6,7 @@ import thread
 import random
 
 # helps py2app. TODO - get this dep walked properly.
-try:
-    from sqlite3 import dbapi2 as sqlite
-except ImportError:
-    from pysqlite2 import dbapi2 as sqlite
+from pysqlite2 import dbapi2 as sqlite
 
 from Foundation import *
 from AppKit import *
@@ -26,7 +23,7 @@ import djangokit.settings
 
 from django.conf import settings
 import django
-settings.DATABASE_ENGINE # accessing a property inflates the settings
+settings.DATABASE_ENGINE # accessng a property inflates the settings
 
 # now we change the settings object for the current project.
 
@@ -34,7 +31,7 @@ settings.DATABASE_ENGINE # accessing a property inflates the settings
 nibinfo = NSBundle.mainBundle().infoDictionary()[u'DjangoKit']
 if 'settings' in nibinfo:
     for k in nibinfo['settings']:
-        print "%s => %s"%( k, nibinfo['settings'][k] )
+        print("*** %s"%k)
         settings.__setattr__(k, nibinfo['settings'][k])
 
 # where do our support files live?
@@ -67,7 +64,7 @@ class DjangoKit(NibClassBuilder.AutoBaseClass):
     def applicationDidFinishLaunching_(self, aNotification):
         self.recentPath = "/"
         
-        self.window.setTitle_( settings.APPNAME )
+        self.window.setTitle_( settings.PRETTYNAME )
     
         res = NSBundle.mainBundle().resourcePath()
 
