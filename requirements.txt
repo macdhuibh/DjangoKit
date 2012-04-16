@@ -1,0 +1,4 @@
+pyobjc
+py2app
+django
+-e git://github.com/macdhuibh/DjangoKit.git#egg=DjangoKit
