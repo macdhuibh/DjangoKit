@@ -42,6 +42,7 @@ databases
 #######################
 src
 build
+dist
 
 # Text Editor Related #
 ########################
