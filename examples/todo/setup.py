@@ -4,7 +4,7 @@ from djangokit import setup
 setup(
   appname = "todo",
   prettyname = "DjangoKit TODO demo",
-  version = "0.1",
+  version = "0.2",
   author = "Tom Insam",
   author_email = "tom@jerakeen.org",
 

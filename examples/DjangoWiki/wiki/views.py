@@ -1,21 +1,22 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
+from django.template import RequestContext
 from wiki.models import Wikipage
 from django.conf import settings
 
 def index(request):
     """Return simple list of wiki pages"""
     pages = Wikipage.objects.all().order_by('title')
-    return render_to_response('home.html', locals())
+    return render_to_response('home.html', locals(), context_instance=RequestContext(request))
 
 def page(request, title):
     """Display page, or redirect to root if page doesn't exist yet"""
     try:
         page = Wikipage.objects.get(title__exact=title)
         base = settings.WIKI_SITEBASE
-        return render_to_response('page.html', locals())
+        return render_to_response('page.html', locals(), context_instance=RequestContext(request))
     except Wikipage.DoesNotExist:
-        return HttpResponseRedirect("%sedit/%s/" % ( settings.WIKI_SITEBASE, title))
+        return HttpResponseRedirect("%sedit/%s/" % (settings.WIKI_SITEBASE, title))
 
 def edit(request, title):
     """Process submitted page edits (POST) or display editing form (GET)"""
@@ -36,7 +37,7 @@ def edit(request, title):
             # create a dummy page object -- note that it is not saved!
             page = Wikipage(title=title)
             page.body = "<!-- Enter content here -->"
-        return render_to_response('edit.html', locals())
+        return render_to_response('edit.html', locals(), context_instance=RequestContext(request))
 
 def delete(request):
     """Delete a page"""
