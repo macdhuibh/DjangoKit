@@ -1,7 +1,7 @@
 from distutils.core import setup as setup_core
 import os
 import sys
-import py2app
+
 from glob import glob
 import django
 from AppKit import NSBundle
@@ -13,7 +13,7 @@ from AppKit import NSBundle
 
 
 def setup(**args):
-
+    import py2app
     appname = args['appname']
     del args['appname']
 

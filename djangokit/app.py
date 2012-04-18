@@ -47,7 +47,7 @@ if not os.path.isfile(settings.DATABASES['default']['NAME']):
     NSLog("installing default database")
     shutil.copy(
         os.path.join( NSBundle.mainBundle().resourcePath(), "database.sqlite" ),
-        settings.DATABASE_NAME
+        settings.DATABASES['default']['NAME']
     )
 
 # we can just publish media directly from the bundle
@@ -169,4 +169,3 @@ class DjangoKit(NibClassBuilder.AutoBaseClass):
 
 if __name__ == "__main__":
     AppHelper.runEventLoop()
-

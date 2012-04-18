@@ -12,10 +12,10 @@ def get_files(path):
 
 setup (
   name = "DjangoKit",
-  version = "0.2",
+  version = "0.3",
   author = "Tom Insam",
   author_email = "tom@jerakeen.org",
-  url = "http://jerakeen.org/code/djangokit",
+  url = "http://github.com/macdhuibh/DjangoKit",
   description = "package django applications as Mac apps",
 
   packages = ['djangokit'],

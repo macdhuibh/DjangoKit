@@ -60,16 +60,17 @@ SECRET_KEY = 'ctik3koe1&)ry_ybrm!qh4yf-!^#ugx2pi-r()wc1ytrvvpqxs'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
-#    'django.template.loaders.filesystem.load_template_source',
-    'django.template.loaders.app_directories.load_template_source',
-#     'django.template.loaders.eggs.load_template_source',
+    "django.template.loaders.filesystem.Loader",
+    "django.template.loaders.app_directories.Loader",
 )
 
+
 MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.middleware.doc.XViewMiddleware',
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.redirects.middleware.RedirectFallbackMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
 )
 
 ROOT_URLCONF = 'djangokit.urls'
